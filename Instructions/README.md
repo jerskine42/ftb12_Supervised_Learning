@@ -1,6 +1,6 @@
 # Unit 12 - Credit Risk Classification
 
-![Credit Risk](Instructions/Images/12-homework-image.png)
+![Credit Risk](Images/12-homework-image.png)
 
 ## Background
 
@@ -18,7 +18,7 @@ As part of your GitHub repository’s `README.md` file, you will create a credit
 
 Download the following files to help you get started:
 
-* [Module 12 Homework Files](Instructions/Starter_Code.zip)
+* [Module 12 Homework Files](Starter_Code.zip)
 
 - - -
 
