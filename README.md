@@ -38,33 +38,49 @@ This homework consists of the following subsections:
 
 Open the starter code notebook and then use it to complete the following steps.
 
-1. Read the `lending_data.csv` data from the `Resources` folder into a Pandas DataFrame.
+1. Read the `lending_data.csv` data from the `data` folder into a Pandas DataFrame.
+    - Load Credit Data![Load Credit Data](images/11a_Load_Credit_Data.png)
+
 
 2. Create the labels set (`y`)  from the “loan_status” column, and then create the features (`X`) DataFrame from the remaining columns.
+    - Separate X and Y Variables![Load Credit Data](images/12a_Separate_x_+_y_Variables.png)
+    - Y Variable![Load Credit Data](images/12b_Review_y_Variable.png)
+    - X Variables![Load Credit Data](images/12c_Review_x_Variables.png)
 
     > **Note** A value of 0 in the “loan_status” column means that the loan is healthy. A value of 1 means that the loan has a high risk of defaulting.
 
 3. Check the balance of the labels variable (`y`) by using the `value_counts` function.
+    - Separate X and Y Variables![Load Credit Data](images/13a_Check_Balance.png)
+  
+    > **Note** The data is imbalanced about 30:1.
 
 4. Split the data into training and testing datasets by using `train_test_split`.
+    - Train Test Split![Load Credit Data](images/14a_Train_Test_Split.png)
+    - Explore Train Test Split![Load Credit Data](images/14b_Explore_tts.png)
+
 
 ### Create a Logistic Regression Model with the Original Data
 
 Employ your knowledge of logistic regression to complete the following steps:
 
 1. Fit a logistic regression model by using the training data (`X_train` and `y_train`).
+    - Logistic Regression Model![Load Credit Data](images/21a_Logistic_Regression_Model.png)
 
 2. Save the predictions on the testing data labels by using the testing feature data (`X_test`) and the fitted model.
+    - Predictions from Test Data![Load Credit Data](images/22a_Test_Predictions.png)
 
 3. Evaluate the model’s performance by doing the following:
+    > **Note** It is important to verify that both the training and testing datasets perform at the same level.  
+  
+    * Calculate the accuracy score of the model.![Load Credit Data](images/23a_Accuracy_Score.png)
 
-    * Calculate the accuracy score of the model.
+    * Generate a confusion matrix.![Load Credit Data](images/23b_Confusion_Matrix.png)
 
-    * Generate a confusion matrix.
-
-    * Print the classification report.
+    * Print the classification report.![Load Credit Data](images/23c_Classification_Report.png)
+    
 
 4. Answer the following question: How well does the logistic regression model predict both the `0` (healthy loan) and `1` (high-risk loan) labels?
+    > **Answer:** The model performs equally well on both the training and test data, this is good. Of greatest concern is rating a high risk loan as low risk which happens 56/619 or 9.0%. The opertunity cost of rating a low risk loan as high risk is very low at 102/1876 or 0.5%.
 
 ### Predict a Logistic Regression Model with Resampled Training Data
 
@@ -73,18 +89,26 @@ Did you notice the small number of high-risk loan labels? Perhaps, a model that 
 To do so, complete the following steps:
 
 1. Use the `RandomOverSampler` module from the imbalanced-learn library to resample the data. Be sure to confirm that the labels have an equal number of data points.
-
+    - Random Over Sampler![Load Credit Data](images/31a_Random_Over_Sampler.png)
+    - Balance Check![Load Credit Data](images/31b_Check_Balance.png)
+    > **Note** Both resuts have the same number of records.  
+  
 2. Use the `LogisticRegression` classifier and the resampled data to fit the model and make predictions.
-
+    - Instantiate and Fit Model![Load Credit Data](images/32a_Create_and_Fit_Model.png)  
+    - Test Data Predictions![Load Credit Data](images/32b_Resample_Test_Predictions.png)  
+  
 3. Evaluate the model’s performance by doing the following:
+    > **Note** It is important to verify that both the training and testing datasets perform at the same level.  
+  
+    * Calculate the accuracy score of the model.![Load Credit Data](images/33a_Accuracy_Scores.png)
 
-    * Calculate the accuracy score of the model.
+    * Generate a confusion matrix.![Load Credit Data](images/33b_Test_Confusion_Matrix.png)
 
-    * Generate a confusion matrix.
-
-    * Print the classification report.
+    * Print the classification report.![Load Credit Data](images/33c_Classification_Report.png)
 
 4. Answer the following question: How well does the logistic regression model, fit with oversampled data, predict both the `0` (healthy loan) and `1` (high-risk loan) labels?
+    > **Answer:** The model performs equally well on both the training and test data, this is good. Of greatest concern is rating a high risk loan as low risk which happens 4/619 or 0.6%. The opertunity cost of rating a low risk loan as high risk is very low at 116/1876 or 0.6%. The oversampeled model performs much better decreasing false positives by 52 (from 56 to 4) at the small expense of increasing false negatives by 14 (from 102 to 116). 
+
 
 ### Write a Credit Risk Analysis Report
 
