@@ -8,7 +8,8 @@
 * [Instruction Details](Instructions/README.md)
 ### 3. Project Process and Results
 * [Jupyter Notebook](code/credit_risk_resampling.ipynb)
-* [Credit Risk Data](data/lending_data.csv)  
+* [Credit Risk Data csv file](data/lending_data.csv)  
+    * Note: csv file is to large for github - will zip in the future
 &nbsp;  
 &nbsp;  
 ---
